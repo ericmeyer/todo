@@ -11,7 +11,8 @@ class TasksController < ApplicationController
 
   def update
     task = Task.find(params["id"])
-    task.update_attributes("description" => params["description"], "complete" => params["complete"])
+    logger.info "****************" + params["due_date"].class.name
+    task.update_attributes("description" => params["description"], "complete" => params["complete"], :due_date => params["due_date"].strftime("%F"))
 
     render :json => task.to_json(:only => [:id, :description, :complete])
   end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111209024909) do
+ActiveRecord::Schema.define(:version => 20111209141029) do
 
   create_table "boring_old_rails_tasks", :force => true do |t|
     t.string   "lame_description"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20111209024909) do
     t.boolean  "complete",    :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "due_date"
   end
 
 end
